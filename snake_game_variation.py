@@ -91,7 +91,7 @@ class Feed(object):
     def __init__(self):
         self.positions = []
         self.colors = [ORANGE]
-        self.last_color = [ORANGE]
+        self.last_color = ORANGE
         self.last_speed = 0
         self.extra_speed = 0
         self.n = 3
@@ -187,6 +187,7 @@ class Game(object):
             self.feed.last_color = 0
             self.snake.died = False
             self.feed.positions = []
+            self.level = 1
             self.feed.n = 3
             self.feed.create()
 
@@ -253,7 +254,6 @@ def main():
     pygame.display.set_caption('Snake Game')
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
     clock = pygame.time.Clock()
-        # 음악, 효과음 
     current_path = os.path.dirname(__file__)
     assets_path = os.path.join(current_path, 'assets')
     pygame.mixer.music.load(os.path.join(assets_path, '8bit_music.mp3'))
