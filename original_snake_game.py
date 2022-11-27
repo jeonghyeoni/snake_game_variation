@@ -5,8 +5,8 @@ import random
 from time import sleep
 
 # 게임 스크린 전역변수
-SCREEN_WIDTH = 1100
-SCREEN_HEIGHT = 700
+SCREEN_WIDTH = 800
+SCREEN_HEIGHT = 600
 
 # 게임 화면 전역변수
 GRID_SIZE = 20
@@ -32,10 +32,8 @@ class Snake(object):
 
     # 뱀 생성
     def create(self):
-        x = GRID_WIDTH//2
-        y = GRID_HEIGHT//2
         self.length = 2
-        self.positions = [(int(x*GRID_SIZE ), int(y*GRID_SIZE))]
+        self.positions = [(int(SCREEN_WIDTH / 2), int(SCREEN_HEIGHT / 2))]
         self.direction = random.choice([UP, DOWN, LEFT, RIGHT])
 
     # 뱀 방향 조정
