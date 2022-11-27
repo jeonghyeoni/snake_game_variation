@@ -1,2 +1,2 @@
 # snake_game_variation
-what
+I added background music, sound effects, new feeds, levels, and score recording functions in the existing snake game.
