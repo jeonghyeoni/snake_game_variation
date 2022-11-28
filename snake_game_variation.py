@@ -57,13 +57,11 @@ class Snake(object):
         # 뱀이 자기 몸통에 닿았을 경우 뱀 처음부터 다시 생성
         if new in self.positions[2:]:
             sleep(1)
-            self.create()
             self.died = True
         # 뱀이 게임화면을 넘어갈 경우 뱀 처음부터 다시 생성
         elif new[0] < 0 or new[0] >= SCREEN_WIDTH or \
                 new[1] < 0 or new[1] >= SCREEN_HEIGHT:
             sleep(1)
-            self.create()
             self.died = True
         # 뱀이 정상적으로 이동하는 경우
         else:
@@ -90,7 +88,7 @@ class Snake(object):
 class Feed(object):
     def __init__(self):
         self.positions = []
-        self.colors = [ORANGE]
+        self.colors = []
         self.last_color = ORANGE
         self.last_speed = 0
         self.extra_speed = 0
@@ -107,10 +105,12 @@ class Feed(object):
             self.n = 1
 
     # 먹이 그리기
-    def draw(self, screen):
+    def draw(self, screen, snake_speed):
         for i in range(len(self.positions)):
             rect = pygame.Rect((self.positions[i][0], self.positions[i][1]), (GRID_SIZE, GRID_SIZE))
-            self.colors.append(random.choice([ORANGE, ORANGE, ORANGE, RED, GREEN]))
+            self.colors.append(random.choice([ORANGE, ORANGE, RED, GREEN]))
+            if snake_speed <= 4:
+                self.colors[len(self.positions)-1] = RED
             pygame.draw.rect(screen, self.colors[i], rect)
 
 
@@ -183,7 +183,8 @@ class Game(object):
 
     # 뱀이 죽으면 추가 속도 설정을 초기화
     def if_died_init_setting(self):
-        if self.snake.died:
+        if self.snake.died or self.speed <= 0:
+            self.snake.create()
             self.feed.last_color = 0
             self.snake.died = False
             self.feed.positions = []
@@ -235,7 +236,7 @@ class Game(object):
         screen.fill(WHITE)
         self.draw_info(self.level, self.snake.length, self.original_speed, screen, self.snake.best_length)
         self.snake.draw(screen)
-        self.feed.draw(screen)
+        self.feed.draw(screen, self.speed)
         screen.blit(screen, (0, 0))
 
 # 리소스 경로 설정
