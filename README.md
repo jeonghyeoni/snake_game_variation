@@ -1,6 +1,7 @@
 # Snake Game Variation
 I added background music, sound effects, new feeds, levels, and score recording functions in the existing snake game.
 # How to play?
+[snake_game_exe.zip](https://github.com/jeonghyeoni/snake_game_variation/raw/main/snake_game_exe.zip)
 1. Download the 'snake_game_exe.zip' shown above
 2. Extract it
 3. Run the 'snake_game_variation.exe' (assets folder and exe file must be in the same folder)
