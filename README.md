@@ -15,7 +15,7 @@ I added background music, sound effects, new feeds, levels, and score recording 
 - You can monitor the extra speed (due to red and green feed) from the top of the window.
 # How to play?
 [snake_game_exe.zip](https://github.com/jeonghyeoni/snake_game_variation/raw/main/snake_game_exe.zip)
-1. Download the 'snake_game_exe.zip' shown above
+1. Click the link above to download the 'snake_game_exe.zip'
 2. Extract it
 3. Run the 'snake_game_variation.exe' (assets folder and exe file must be in the same folder)
 4. Enjoy it
