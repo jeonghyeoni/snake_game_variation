@@ -1,5 +1,18 @@
 # Snake Game Variation
 I added background music, sound effects, new feeds, levels, and score recording functions in the existing snake game.
+# Game rule
+- Press arrow keys to move snake.
+- If the snake's head touches its own body or the edge of the window, the game is over.
+- When snake eats a feed, snake's length and speed increase.(This effect is the same for any kind of feed)
+
+- Additional effects
+ 
+  \- Orange feed: none
+ 
+  \- Red feed: speed up 
+ 
+  \- Green feed: speed down
+- You can monitor the extra speed (due to red and green feed) from the top of the window.
 # How to play?
 [snake_game_exe.zip](https://github.com/jeonghyeoni/snake_game_variation/raw/main/snake_game_exe.zip)
 1. Download the 'snake_game_exe.zip' shown above
