@@ -210,8 +210,7 @@ class Game(object):
         # 레벨, 길이, 속도, 추가 속도
         info = "Level " + str(level) + "    " + "Length: " + str(length) + "    " +\
                 "Speed: " + str(round(speed, 2)) + " + " + str(round(self.feed.extraSpeed(), 2))
-        font_path = resource_path("assets/NanumGothicCoding-Bold.ttf")
-        font = pygame.font.Font(font_path, 26)
+        font = pygame.font.Font('assets/NanumGothicCoding-Bold.ttf', 26)
         text_obj = font.render(info, 1, GRAY)
         text_rect = text_obj.get_rect()
         text_rect.x, text_rect.y = 10, 10
@@ -254,12 +253,10 @@ def main():
     pygame.display.set_caption('Snake Game')
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
     clock = pygame.time.Clock()
-    current_path = os.path.dirname(__file__)
-    assets_path = os.path.join(current_path, 'assets')
-    pygame.mixer.music.load(os.path.join(assets_path, '8bit_music.mp3'))
+    pygame.mixer.music.load('assets/8bit_music.mp3')
     pygame.mixer.music.play(-1)
     pygame.mixer.music.set_volume(0.2)
-    sound = pygame.mixer.Sound(os.path.join(assets_path, 'sound.mp3'))
+    sound = pygame.mixer.Sound('assets/sound.mp3')
     sound.set_volume(0.2)
     game = Game(sound)
 
